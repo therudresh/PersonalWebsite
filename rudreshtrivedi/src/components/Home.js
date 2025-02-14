@@ -5,25 +5,26 @@ import profile from "../assets/profile.jpg";
 const Home = () => {
   return (
     <div style={styles.container}>
-      <h1>Welcome to My Portfolio</h1>
+      <h1>Rudresh Trivedi</h1>
       <img src={profile} alt="Profile" style={styles.profileImage} />
-      <p>Hi, I'm a [Your Job Title]. Check out my work below!</p>
+      <p>Senior Software Engineer</p> 
+      <p>Passionate about Scalable Systems, Distributed Computing, and High-Performance Architectures. When I'm not optimizing code, you’ll find me running trails, hiking mountains, or building cool side projects.</p>
 
       {/* Experience Section */}
       <div style={styles.section}>
         <h2>Experience</h2>
         <div style={styles.blockContainer}>
           <Link to="/experience#exp1" style={styles.block}>
-            <h3>Software Engineer at XYZ Corp</h3>
-            <p>Worked on full-stack development and cloud infrastructure.</p>
+            <h3>Senior Software Engineer at ChaosSearch</h3>
+            <p>Led the query execution team, driving technical excellence and customer-focused innovation while architecting high-performance systems. Passionate about building scalable, efficient data processing solutions, securing a patent, and optimizing cloud infrastructure for seamless execution.</p>
           </Link>
           <Link to="/experience#exp2" style={styles.block}>
-            <h3>Frontend Developer at ABC Ltd</h3>
-            <p>Built scalable UI components using React.</p>
+            <h3>Software Engineer Intern at AtSign</h3>
+            <p>Developed a robust Python SDK for atProtocol, enabling seamless integration and enhancing developer experience. Focused on reliability, test coverage, and clear documentation to drive adoption and usability.</p>
           </Link>
           <Link to="/experience#exp3" style={styles.block}>
-            <h3>Intern at Startup Inc</h3>
-            <p>Worked on mobile app development with React Native.</p>
+            <h3>Software Engineer Intern at DeepCure</h3>
+            <p>Built an internal web app for hyperparameter optimization, accelerating ML research and experimentation. Designed scalable analytics and testing infrastructure, driving adoption and productivity for the chemist team.</p>
           </Link>
         </div>
         <Link to="/experience" style={styles.button}>View All Experiences</Link>
@@ -31,19 +32,15 @@ const Home = () => {
 
       {/* Projects Section */}
       <div style={styles.section}>
-        <h2>Projects</h2>
+        <h2>Selected Projects</h2>
         <div style={styles.blockContainer}>
           <Link to="/projects#proj1" style={styles.block}>
-            <h3>E-commerce Website</h3>
-            <p>Developed an e-commerce platform with Stripe integration.</p>
+            <h3>Blockchain E-commerce Website</h3>
+            <p>Had a blast building 'eBay on Blockchain'—a fully decentralized marketplace powered by Ethereum and IPFS! From crafting smart contracts to architecting a full-stack system, every challenge was a deep dive into secure, trustless commerce.</p>
           </Link>
           <Link to="/projects#proj2" style={styles.block}>
-            <h3>AI Chatbot</h3>
-            <p>Built an AI chatbot for customer support automation.</p>
-          </Link>
-          <Link to="/projects#proj3" style={styles.block}>
-            <h3>Personal Portfolio</h3>
-            <p>Designed and developed my own portfolio website.</p>
+            <h3>Game Development</h3>
+            <p>Turning math into a high-speed adventure! Built a fun, interactive learning game with a sports car twist—developing everything from code to design. Launched on the Play Store and watched it race past 1,000 downloads across 10+ countries!</p>
           </Link>
         </div>
         <Link to="/projects" style={styles.button}>View All Projects</Link>
@@ -54,7 +51,7 @@ const Home = () => {
 
 const styles = {
   container: { textAlign: "center", padding: "20px" },
-  profileImage: { width: "150px", borderRadius: "50%", margin: "10px 0" },
+  profileImage: { width: "250px", height: "250px", borderRadius: "50%", margin: "10px 0" },
   section: { marginTop: "40px", textAlign: "left", padding: "20px", maxWidth: "1500px", marginLeft: "auto", marginRight: "auto" },
   blockContainer: { display: "flex", flexDirection: "column", gap: "15px" },
   block: {
