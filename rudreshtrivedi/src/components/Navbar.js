@@ -1,47 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.navContainer}>
-        <ul style={styles.navLinks}>
-          <li><Link to="/" style={styles.link}>Home</Link></li>
-          <li><Link to="/experience" style={styles.link}>Experience</Link></li>
-          <li><Link to="/projects" style={styles.link}>Projects</Link></li>
-          <li><Link to="/resume" style={styles.link}>Resume</Link></li>
+    <nav className="navbar">
+      <div className="nav-container">
+        <ul className="nav-links">
+          <li><Link to="/" className="nav-link">Home</Link></li>
+          <li><Link to="/experience" className="nav-link">Experience</Link></li>
+          <li><Link to="/projects" className="nav-link">Projects</Link></li>
+          <li><Link to="/resume" className="nav-link">Resume</Link></li>
         </ul>
+        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
       </div>
     </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    width: "100%",
-    background: "#333",
-    padding: "10px 20px",
-  },
-  navContainer: {
-    display: "flex",
-    alignItems: "center",
-  },
-  logo: {
-    color: "#fff",
-    marginRight: "20px",
-  },
-  navLinks: {
-    listStyle: "none",
-    display: "flex",
-    gap: "15px",
-    padding: 0,
-    margin: 0,
-  },
-  link: {
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "16px",
-  },
 };
 
 export default Navbar;

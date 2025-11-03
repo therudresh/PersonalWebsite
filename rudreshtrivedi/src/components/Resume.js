@@ -1,21 +1,23 @@
 import React from "react";
 
 const Resume = () => {
-  const resumeURL = "/resume.pdf"; // Ensure this file is in the public folder
+  const resumeURL = "/resume.pdf";
 
   return (
-    <div style={styles.container}>
-      <h1>My Resume</h1>
-      <a href={resumeURL} target="_blank" rel="noopener noreferrer" style={styles.button}>
+    <div className="resume-container">
+      <h1 className="resume-title">My Resume</h1>
+      <div className="resume-viewer">
+        <iframe
+          src={resumeURL}
+          title="Resume"
+          className="resume-iframe"
+        />
+      </div>
+      <a href={resumeURL} target="_blank" rel="noopener noreferrer" className="resume-button">
         Open Resume in New Tab
       </a>
     </div>
   );
-};
-
-const styles = {
-  container: { textAlign: "center", padding: "20px" },
-  button: { padding: "10px", background: "#007BFF", color: "#fff", textDecoration: "none", borderRadius: "5px" },
 };
 
 export default Resume;

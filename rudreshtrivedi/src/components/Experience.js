@@ -20,7 +20,7 @@ const experiences = [
     title: "Software Engineer Intern",
     company: "AtSign",
     description: [
-      "At AtSign, I played a key role in developing a Python SDK for atProtocol, enabling seamless integration for application developers. Working closely with the team, we identified a crucial market gap—Python’s widespread adoption made this SDK essential for broader accessibility. Despite tight time constraints, I successfully delivered a well-structured and efficient solution.",
+      "At AtSign, I played a key role in developing a Python SDK for atProtocol, enabling seamless integration for application developers. Working closely with the team, we identified a crucial market gap—Python's widespread adoption made this SDK essential for broader accessibility. Despite tight time constraints, I successfully delivered a well-structured and efficient solution.",
       "To ensure reliability and maintainability, I designed a comprehensive testing infrastructure, validating functionality across various use cases. Additionally, I created detailed documentation and illustrative examples, making adoption seamless for developers. This project not only met critical deadlines but also reinforced the importance of scalability, precision, and user-focused development in delivering impactful software solutions.",
     ],
     companyLogo: "https://atsign.com/wp-content/uploads/2022/05/atsign-logo-horizontal-color2022.svg",
@@ -44,60 +44,32 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div style={styles.container}>
-      <h1>Experience</h1>
+    <div className="page-container">
+      <h1 className="page-title">Experience</h1>
       {experiences.map((exp) => (
-        <div key={exp.id} style={styles.experienceRow}>
-          {/* Left Side: Title and Description */}
-          <div style={styles.textContainer}>
-            <h2 style={styles.title}>{exp.title} at {exp.company}</h2>
-            <div style={styles.description}>
+        <div key={exp.id} id={exp.id} className="experience-row">
+          <div className="text-container">
+            <h2 className="experience-title">{exp.title} at {exp.company}</h2>
+            <div className="description">
               {exp.description.map((line, index) => (
-                <p key={index} style={styles.descriptionText}>{line}</p>
+                <p key={index} className="description-text">{line}</p>
               ))}
             </div>
-            <div style={styles.toolsContainer}>
+            <div className="tools-container">
               {exp.tools.map((tool, index) => (
-                <span key={index} style={styles.toolItem}>{tool}</span>
+                <span key={index} className="tool-item">{tool}</span>
               ))}
             </div>
           </div>
-
-          {/* Right Side: Company Logo Box (Clickable) */}
-          <div style={styles.logoContainer}>
+          <div className="logo-container">
             <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
-              <img src={exp.companyLogo} alt={`${exp.company} Logo`} style={styles.logo} />
+              <img src={exp.companyLogo} alt={`${exp.company} Logo`} className="logo" />
             </a>
           </div>
         </div>
       ))}
     </div>
   );
-};
-
-const styles = {
-  container: { padding: "40px", maxWidth: "900px", margin: "auto" },
-  experienceRow: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: "40px",
-  },
-  textContainer: { flex: 2, textAlign: "left" },
-  title: { fontSize: "22px", fontWeight: "bold", marginBottom: "8px" },
-  description: { marginTop: "10px" },
-  descriptionText: { fontSize: "16px", color: "#555", lineHeight: "1.5", margin: "5px 0" },
-  toolsContainer: { marginTop: "10px" },
-  toolItem: {
-    display: "inline-block",
-    background: "#e0e0e0",
-    padding: "5px 12px",
-    borderRadius: "20px",
-    fontSize: "14px",
-    marginRight: "8px",
-  },
-  logoContainer: { flex: 1, textAlign: "center" },
-  logo: { width: "100px", height: "100px", objectFit: "contain" },
 };
 
 export default Experience;
